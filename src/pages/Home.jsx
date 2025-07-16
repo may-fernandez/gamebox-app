@@ -1,10 +1,10 @@
 import React from "react";
-import Calificacion from "../components/Calificacion.jsx";
+import GameDetail from "./gameDetail/GameDetail";
 function Home(){
 
     return(
         <div>
-            <Calificacion/>
+            <GameDetail/>
         </div>
     );
 }
