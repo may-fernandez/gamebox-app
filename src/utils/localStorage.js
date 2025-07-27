@@ -11,6 +11,12 @@ export const addToWishlist = (game) => {
     }
 }
 
+export const isInWishlist = (gameId) => {
+    const wishlist = getWishlist();
+    return wishlist.includes(gameId);
+};
+
+
 export const removeFromWishlist = (gameId) => {
     const wishlist = getWishlist().filter((g) => g.id !== gameId);
     localStorage.setItem("wishlist", JSON.stringify(wishlist));
