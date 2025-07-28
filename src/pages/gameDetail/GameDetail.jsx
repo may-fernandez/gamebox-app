@@ -1,8 +1,33 @@
 import React from "react";
-import Calificacion from "../../components/Calificacion";
-import "./GameDetail.css"
+import "./GameDetail.css";
+import {useState, useEffect} from "react";
+import Calificacion from "../../components/Calificacion.jsx";
+import {addToWishlist,
+        isInWishlist,
+        removeFromWishlist} from "../../utils/localStorage.js";
+
 
 function GameDetail({game}){
+
+    const [inWishlist, setInWhishlist] = useState(false);
+
+    useEffect(() => {
+        if(game){
+            setInWhishlist(isInWishlist(game.id));
+        }
+    }, [game]);
+
+    const toggleWishlist = () => {
+
+        if(inWishlist){
+            removeFromWishlist(game.id);
+            setInWhishlist(false);
+        }
+        else{
+            addToWishlist(game.id);
+            setInWhishlist(true);
+        }
+    };
 
     if(!game){
         return <p className="select-game">Selecciona un juego para ver más detalles</p>;
@@ -25,6 +50,10 @@ function GameDetail({game}){
         <div className="rating">
             <Calificacion gameId={game.id}/>
         </div>
+
+        <button className="btn-wishlist" onClick={toggleWishlist}>
+            {inWishlist ? "Quitar de wishlist" : "Agregar a wishlist"}
+        </button>
     </div>
     );
 }
