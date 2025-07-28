@@ -10,7 +10,7 @@ function Wishlist({ allGames }) {
     const wishlistIds = getWishlist();
 
     const filteredGames = allGames.filter((game) =>
-      wishlistGames.includes(game.id)
+      wishlistIds.includes(game.id)
     );
     setWishlistGames(filteredGames);
   }, [allGames]);
