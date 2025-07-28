@@ -7,7 +7,7 @@
     color: #efefef;
 }
 .game-container{
-    max-width: 6rem;
+    max-width: 5.7rem;
     margin: auto;
     padding: 2rem;
     background-color: hsla(0, 0%, 70%, 0.5);
@@ -46,4 +46,14 @@
 
 .rating{
     margin-top: 0.8rem;
+}
+
+.btn-wishlist{
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    background-color: #008cba;
+    color: #efefef;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
 }

@@ -52,7 +52,7 @@ function GameDetail({game}){
         </div>
 
         <button className="btn-wishlist" onClick={toggleWishlist}>
-            {inWishlist ? "Quitar de wishlist" : "Agregar a wishlist"}
+            {inWishlist ? "- Wishlist" : "+ Wishlist"}
         </button>
     </div>
     );
