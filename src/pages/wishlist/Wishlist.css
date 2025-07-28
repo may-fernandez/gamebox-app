@@ -1,0 +1,21 @@
+.wl-container{
+    padding: 1.2rem;
+}
+
+.wl-title{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.wl-games{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+}
+
+.game-card{
+    width: 100%;
+    height: 9rem;
+    object-fit: cover;
+    border-radius: 5px;
+}
