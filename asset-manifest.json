@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/gamebox-app/static/css/main.74b4bbff.css",
-    "main.js": "/gamebox-app/static/js/main.78b7ca52.js",
+    "main.css": "/gamebox-app/static/css/main.8f07c011.css",
+    "main.js": "/gamebox-app/static/js/main.3b1b1b5c.js",
     "static/js/453.d097b160.chunk.js": "/gamebox-app/static/js/453.d097b160.chunk.js",
     "index.html": "/gamebox-app/index.html",
-    "main.74b4bbff.css.map": "/gamebox-app/static/css/main.74b4bbff.css.map",
-    "main.78b7ca52.js.map": "/gamebox-app/static/js/main.78b7ca52.js.map",
+    "main.8f07c011.css.map": "/gamebox-app/static/css/main.8f07c011.css.map",
+    "main.3b1b1b5c.js.map": "/gamebox-app/static/js/main.3b1b1b5c.js.map",
     "453.d097b160.chunk.js.map": "/gamebox-app/static/js/453.d097b160.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.74b4bbff.css",
-    "static/js/main.78b7ca52.js"
+    "static/css/main.8f07c011.css",
+    "static/js/main.3b1b1b5c.js"
   ]
 }
