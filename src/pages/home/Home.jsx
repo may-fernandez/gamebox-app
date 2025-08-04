@@ -1,5 +1,6 @@
 import React from "react";
-import GameDetail from "./gameDetail/GameDetail";
+import "./Home.css";
+import GameDetail from "../gameDetail/GameDetail";
 function Home(){
 
     return(
