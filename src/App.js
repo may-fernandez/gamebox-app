@@ -1,5 +1,5 @@
-import 'App.css';
-import Home from './pages/Home.jsx';
+import './App.css';
+import Home from './pages/home/Home.jsx';
 import Wishlist from './pages/wishlist/Wishlist.jsx';
 import GameDetail from './pages/gameDetail/GameDetail.jsx';
 import {useEffect, useState } from 'react';

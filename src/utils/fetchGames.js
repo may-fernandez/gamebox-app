@@ -1,5 +1,5 @@
 const BASE_URL= "https://api.rawg.io/api/games";
-const API_KEY= import.meta.env.VITE_RAWG_API_KEY;
+const API_KEY= process.env.REACT_APP_RAWG_API_KEY;
 
 const fetchGames = async (params = "") => {
 
