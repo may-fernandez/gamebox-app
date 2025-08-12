@@ -1,5 +1,6 @@
 import React, {useState, useEffect } from "react";
 import './AllGames.css';
+import GameCard from "../../components/GameCard";
 
 function AllGames({allGames}) {
     const [games, setGames] = useState(allGames);
@@ -27,6 +28,22 @@ function AllGames({allGames}) {
 
         fetchGames();
     },[]);
+
+    return(
+        <div>
+            <div className="all-games">
+                {games.map((game) => (
+                    <div>
+                        <ul className="game-card" >
+                            <li key={game.id}>
+                                <GameCard game={game}/>
+                            </li>
+                        </ul>
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
 }
 
 export default AllGames;
