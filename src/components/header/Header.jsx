@@ -19,15 +19,15 @@ function Header() {
       try{
         const response = await fetch(`https://api.rawg.io/api/genres?key=${process.env.REACT_APP_RAWG_API_KEY}`);
         const data = await response.json();
-
+        if(!response.ok){
+          throw new Error("Error al obtener las categorias de la API");
+        }
         setCategories(data.results || []);
-
       }
       catch(error){
         console.error("Error buscando las categorias: ", error);
       }
     }
-
     fetchCategories();
   }, []);
 
