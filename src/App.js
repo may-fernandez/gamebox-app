@@ -34,18 +34,7 @@ function App() {
   }, []);
 
   return (
-    <Router>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/wishlist">Wishlist</Link>
-      </nav>
-
-      <Routes>
-        <Route path='/' element={<Home allGames={allGames}/>}></Route>
-        <Route path='/wishlist' element={<Wishlist allGames={allGames}/>}></Route>
-        <Route path='/detalle/:id' element={<GameDetail allGames={allGames}/>}></Route>
-      </Routes>
-    </Router>
+    <></>
   );
 }
 

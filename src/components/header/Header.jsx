@@ -1,27 +1,25 @@
 import React from "react";
 import "Header.css";
 import search from "../../assets/search.svg";
-import { Link } from "react-router-dom";
+import Home from "../../pages/home/Home.jsx";
+import Wishlist from "../../pages/wishlist/Wishlist.jsx";
+import allGames from "../../pages/allGames/AllGames.jsx";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 
 function Header() {
   return (
-    <header>
-      <div className="header-container">
-        <Link to="/" className="logo"></Link>
-        <Link to="">All games</Link>
+    <Router>
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/wishlist">Wishlist</Link>
+      </nav>
 
-        <div className="search-bar-container">
-          <input
-            type="text"
-            placeholder="Busca un juego..."
-            className="search-bar"
-          />
-          <button className="btn-buscar">
-            <img src={search} className="search-icon"/>
-          </button>
-        </div>
-      </div>
-    </header>
+      <Routes>
+        <Route path='/' element={<Home allGames={allGames}/>}></Route>
+        <Route path='/wishlist' element={<Wishlist allGames={allGames}/>}></Route>
+        <Route path='/detalle/:id' element={<GameDetail allGames={allGames}/>}></Route>
+      </Routes>
+    </Router>
   );
 }
 
