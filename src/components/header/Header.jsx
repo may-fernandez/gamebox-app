@@ -5,21 +5,34 @@ import Home from "../../pages/home/Home.jsx";
 import Wishlist from "../../pages/wishlist/Wishlist.jsx";
 import AllGames from "../../pages/allGames/AllGames.jsx";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import {useState, useEffect} from 'react';
 
 function Header() {
-  return (
-    <Router>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/wishlist">Wishlist</Link>
-      </nav>
 
-      <Routes>
-        <Route path='/' element={<Home/>}></Route>
-        <Route path='/wishlist' element={<Wishlist allGames={allGames}/>}></Route>
-        <Route path='/detalle/:id' element={<GameDetail allGames={allGames}/>}></Route>
-      </Routes>
-    </Router>
+  const [categories, setCategories] = useState([]);
+  const [showDropDown, setShowDropDown] = useState(false);
+
+  useEffect(() => {
+
+    const fetchCategories = async () => {
+
+      try{
+        const response = await fetch(`https://api.rawg.io/api/genres?key=${process.env.REACT_APP_RAWG_API_KEY}`);
+        const data = await response.json();
+
+        setCategories(data.results || []);
+
+      }
+      catch(error){
+        console.error("Error buscando las categorias: ", error);
+      }
+    }
+
+    fetchCategories();
+  }, []);
+
+  return (
+    <></>
   );
 }
 
