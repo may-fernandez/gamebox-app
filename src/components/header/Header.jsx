@@ -4,7 +4,7 @@ import search from "../../assets/search.svg";
 import Home from "../../pages/home/Home.jsx";
 import Wishlist from "../../pages/wishlist/Wishlist.jsx";
 import AllGames from "../../pages/allGames/AllGames.jsx";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import {useState, useEffect} from 'react';
 
 function Header() {
@@ -32,7 +32,29 @@ function Header() {
   }, []);
 
   return (
-    <></>
+    <header>
+      <div>
+        <Link to= "/" className="logo">GameBox</Link>
+
+        <nav>
+          <li>
+            <NavLink to="/" className="nav-link" end>Home</NavLink>
+          </li>
+          <li>
+            <NavLink to="/wishlist" className="nav-link">Wishlist</NavLink>
+          </li>
+          <li>
+            <NavLink to="/all-games" className="nav-link">Juegos</NavLink>
+          </li>
+
+          <li className="dropdown" 
+          onMouseEnter={() => setShowDropDown(true)} 
+          onMouseLeave={() => setShowDropDown(false)}>
+            <span className="categories-nav">Categories ▾</span>
+          </li>
+        </nav>
+      </div>
+    </header>
   );
 }
 
