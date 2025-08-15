@@ -8,14 +8,19 @@ import { Link, NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 function Header() {
+  const API_KEY = process.env.REACT_APP_RAWG_API_KEY;
+
   const [categories, setCategories] = useState([]);
   const [showDropDown, setShowDropDown] = useState(false);
+
+  const [query, setQuery] = useState("");
+  const [sugerencias, setSugerencias] = useState([]);
 
   useEffect(() => {
     const fetchCategories = async () => {
       try {
         const response = await fetch(
-          `https://api.rawg.io/api/genres?key=${process.env.REACT_APP_RAWG_API_KEY}`
+          `https://api.rawg.io/api/genres?key=${API_KEY}`
         );
         const data = await response.json();
         if (!response.ok) {
